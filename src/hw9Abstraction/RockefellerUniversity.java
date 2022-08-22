@@ -1,8 +1,6 @@
 package hw9Abstraction;
 
-public class RockefellerUniversity {
+public class RockefellerUniversity{
 	public void maths() { //method implemented
-
 	}
-
 }
