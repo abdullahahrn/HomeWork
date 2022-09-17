@@ -1,26 +1,36 @@
 package hw10UseOfSuperInChildClass;
-/*
- * b) Create a class name 'Daughter', declare variable birthMonth, age. Declare default (declare a sysout inside it) and parameterized constructor (declare a sysout inside it), and implement a regular method daughter() and declare a sysout. Create a parameterized method daughterInfo() which contains 2 of its variables as local variable. declare a sysout (you can copy from parameterized constructor) . Now, Daughter extends Father (super class). Use super method, super keyword and show all of their use in child class. Use 'FamilyName' variable (from parent class) to initialize by super keyword in child class (Use one constructor and one method to implement them). and initialize in a TestFamily Class. Paste GitHub link below.
- */
+
 public class Daughter extends Father {
-	public int birthMonth;
-	public byte age;
-	
+	public String birthMonth;
+	public int age;
+
 	public Daughter() {
-	System.out.println();
-	}
-	public Daughter(int birthMonth, byte age){
-		System.out.println();
-	}
-	public static void main(String[] args) {
-		System.out.println();
-	}
-		public void daughterInfo(int birthMonth, byte age) {
-			System.out.println();
-		}
-		
+		super("Abdullah Al Harun", 29, 'M', false);
+		super.father();
+		super.fatherInfo("Bashar", 55, 'M', false);
+		super.familyName = "Harun";
+		System.out.println("Father Family name is " + familyName);
+		System.out.println("This default constractor is from daughter class");
 	}
 
-	
+	public Daughter(String birthMonth, int age) {
+		super();
+		this.birthMonth = birthMonth;
+		this.age = age;
+		System.out.println("Daughter Birth Month" + birthMonth + "\nDaughter age " + age);
+	}
 
+	public void daughter() {
+		super.father();
+		super.fatherInfo("shab", 62, 'M', false);
+		super.familyName = "uddin";
+		System.out.println("father Family name is" + familyName);
+		System.out.println("this void type method from daughter class");
+	}
 
+	public void daughterInfo(String birthMonth, int age) {
+		this.birthMonth = birthMonth;
+		this.age = age;
+		System.out.println("Daughter Birth Month: " + birthMonth + ",\nDaughter age: " + age);
+	}
+}
